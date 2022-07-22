@@ -1,0 +1,40 @@
+.cover {
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    .movie-info {
+      opacity: 1;
+      bottom: 0;
+    }
+  }
+  &__img {
+    height: 320px;
+  }
+  .movie-info {
+    opacity: 0;
+    width: -webkit-fill-available;
+    position: absolute;
+    bottom: -10px;
+    padding: 0 5px 10px 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s;
+    &__title {
+      margin: 5px 0;
+      text-align: center;
+    }
+    &__description {
+      font-size: 11px;
+      margin: 0 0 1em;
+      &--mg-bt {
+        margin-bottom: 0.25em;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+    .cover {
+        max-width: 60vw;
+    }
+}
