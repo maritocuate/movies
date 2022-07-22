@@ -1,0 +1,35 @@
+.home {
+    display: flex;
+    font-size: calc(1rem + 1.5vmin);
+    justify-content: center;
+    margin: auto;
+    max-width: 90vw;
+    color: #fff;
+    .section {
+        position: relative;
+        &__img {
+          height: 680px;
+        }
+        &__tittle {
+          margin: 0;
+          position: absolute;
+          bottom: 0;
+          width: calc(100% - 40px);
+          padding: 20px;
+          background-color: red;
+          font-size: 30px;
+          &--opacity {
+            background-color: rgba(255, 0, 0, 0.8);
+          }
+        }
+        &__img--filter {
+          filter: brightness(70%);
+        }
+      }
+}
+
+@media (min-width: 1200px) {
+    .home {
+        max-width: 60vw;
+    }
+}
