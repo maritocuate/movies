@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #4FFAB6;
+    color: white;
+    font-size: calc(1rem + 2vmin);
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
+    a {
+        color: white;
+        font-size: 13px;
+        text-decoration: none;
+        margin-right: 16px;
+    }
+    .logo {
+        height: 35px;
+        margin: 5px;
+    }
+    .navbutton {
+        padding: 0.5em 0.8em;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header {
+        max-width: 60vw;
+    }
+}
