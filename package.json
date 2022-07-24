@@ -11,6 +11,8 @@
     "coverage": "react-scripts test --collectCoverage"
   },
   "dependencies": {
+    "mobx": "^6.6.1",
+    "mobx-react": "^7.5.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",

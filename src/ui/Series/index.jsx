@@ -1,15 +1,17 @@
+import React from 'react'
+import { useObserver } from 'mobx-react'
 import './styles.scss'
 
-import Data from '../../Data'
+import { StoreContext } from '../../Store'
 import { Cover } from '../Cover'
 
 export function Series () {
-  const { movies } = Data()
+  const store = React.useContext(StoreContext)
 
-  return (
+  return useObserver(() => (
         <div className='series-page'>
             {
-              movies.map(({ images, title, description }, i) => (
+              store.series.map(({ images, title, description }, i) => (
                 <Cover
                   key={i}
                   image={images['Poster Art'].url}
@@ -19,5 +21,5 @@ export function Series () {
               ))
             }
         </div>
-  )
+  ))
 }
