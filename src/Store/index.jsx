@@ -10,7 +10,7 @@ export const StoreProvider = ({ children }) => {
         .then(response => response.json())
         .then(data => {
           const requestedData = data.entries
-          const totalMovies = requestedData.filter(item => item.programType === 'movies')
+          const totalMovies = requestedData.filter(item => item.programType === 'movie')
           store.setMovies(totalMovies)
           const totalSeries = requestedData.filter(item => item.programType === 'series')
           store.setSeries(totalSeries)
