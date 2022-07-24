@@ -13,6 +13,9 @@
         font-size: 13px;
         text-decoration: none;
         margin-right: 16px;
+        &.active {
+            background-color: red;
+        }
     }
     .logo {
         height: 35px;

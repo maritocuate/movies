@@ -1,24 +1,26 @@
 import { Link, useLocation } from 'react-router-dom'
-import styles from './Header.module.scss'
+import './styles.scss'
 
 export function Header () {
   const { pathname } = useLocation()
+
   return (
-        <nav className={styles.header}>
+        <nav className='header'>
             <Link to="/">
                 <img
                     src="../images/logo.png"
                     alt="Dreadful Tomato"
-                    className={styles.logo}
+                    className='logo'
                 />
             </Link>
 
-            {
-                (pathname === '/movies' || pathname === '/series')
-                  ? (
+            {(pathname === '/movies' || pathname === '/series')
+              ? (
                     <>
-                        <Link to="/movies">
-                            <div className={styles.navbutton}>
+                        <Link
+                            className={pathname === '/movies' ? 'active' : null}
+                            to="/movies">
+                            <div className='navbutton'>
                                 <img
                                     src="../images/icon-movies.png"
                                     alt="icon movies"
@@ -27,8 +29,10 @@ export function Header () {
                                 <span>Movies</span>
                             </div>
                         </Link>
-                        <Link to="/series">
-                            <div className={styles.navbutton}>
+                        <Link
+                            className={pathname === '/series' ? 'active' : null}
+                            to="/series">
+                            <div className='navbutton'>
                                 <img
                                     src="../images/icon-series.png"
                                     alt="icon movies"
@@ -38,9 +42,8 @@ export function Header () {
                             </div>
                         </Link>
                     </>
-                    )
-                  : ('')
-              }
+                )
+              : null}
         </nav>
   )
 }
