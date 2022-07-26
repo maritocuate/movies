@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import Paginate from './Paginate'
 import './styles.scss'
-
-import { Cover } from '../Cover'
 
 const Movies = ({ type }) => {
   const [movies, setMovies] = useState([])
   const [series, setSeries] = useState([])
-  const films = type === 'movies' ? movies : series
 
   useEffect(() => {
     callApiList('https://static.rviewer.io/challenges/datasets/dreadful-tomatoes/data.json')
@@ -14,7 +12,6 @@ const Movies = ({ type }) => {
 
   const callApiList = async (urlApi) => {
     if (movies.length) return
-    console.log('call api')
     await fetch(urlApi)
       .then(response => response.json())
       .then(data => {
@@ -25,19 +22,11 @@ const Movies = ({ type }) => {
         setSeries(totalSeries)
       })
   }
+
   return (
-        <div className='films-page'>
-            {
-                films.map(({ images, title, description }, i) => (
-                    <Cover
-                        key={title}
-                        image={images['Poster Art'].url}
-                        title={title}
-                        description={description}
-                    />
-                ))
-            }
-        </div>
+      <div className='films'>
+          <Paginate items={(type === 'movies') ? movies : series}/>
+      </div>
   )
 }
 

@@ -1,13 +1,42 @@
 @import '../../index.scss';
-.films-page {
+.films {
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 160px);
-    justify-content: center;
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 160px);
+        justify-content: center;
+    }
+    .paginate-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .paginate {
+            display: flex;
+            list-style: none;
+            &__num {
+                padding: 4px 10px;
+                margin: 0 3px;
+                border-radius: 14px;
+                background-color: red;
+                opacity: .7;
+                cursor: pointer;
+            }
+            &__active {
+                opacity: 1;
+            }
+            &__arrow {
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 20px;
+                top: -5px;
+                position: relative;
+            }
+        }
+    }
 }
 
 @media (min-width: 1200px) {
-    .films-page {
+    .films {
         max-width: 60vw;
     }
 }
