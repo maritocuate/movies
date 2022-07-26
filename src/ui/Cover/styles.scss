@@ -9,7 +9,7 @@
     }
   }
   &__img {
-    height: 320px;
+    height: 220px;
   }
   .movie-info {
     opacity: 0;
@@ -22,9 +22,11 @@
     &__title {
       margin: 5px 0;
       text-align: center;
+      font-size: 12px;
     }
     &__description {
-      font-size: 11px;
+      display: block;
+      font-size: 9px;
       margin: 0 0 1em;
       &--mg-bt {
         margin-bottom: 0.25em;
