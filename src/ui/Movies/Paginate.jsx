@@ -23,16 +23,18 @@ const Paginate = ({ items }) => {
   return (
         <>
             <div className='films__container'>{
-                currentItems.map(({ images, title, description }, i) => {
-                  return (
-                    <Cover
-                        key={i}
-                        image={images['Poster Art'].url}
-                        title={title}
-                        description={description}
-                    />
-                  )
-                })
+                (currentItems.length)
+                  ? currentItems.map(({ images, title, description }, i) => {
+                    return (
+                        <Cover
+                            key={i}
+                            image={images['Poster Art'].url}
+                            title={title}
+                            description={description}
+                        />
+                    )
+                  })
+                  : <section className='films__empty'>No results found</section>
             }</div>
             <nav className='paginate-container'>
                 <ReactPaginate

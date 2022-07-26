@@ -2,17 +2,19 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    border-bottom: 1px solid #4FFAB6;
     color: white;
     font-size: calc(1rem + 2vmin);
     margin: auto;
     max-width: 90vw;
     text-align: center;
+    top: 2px;
+    position: relative;
     a {
         color: white;
         font-size: 13px;
         text-decoration: none;
         margin-right: 16px;
+        border-radius: 4px 4px 0 0;
         &.active {
             background-color: red;
         }
